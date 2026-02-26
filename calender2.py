@@ -9,3 +9,7 @@ print(f"Bis Dein Abschluss sind {zeitspanne.days} geblieben")
 
 Du hast Dein Flug in: xxxx
 
+login = {"steffan":"steffan1986",
+         "feltMirNicht1":"feltMir1",
+         "lenny":"maedchen"}
+
