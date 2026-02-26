@@ -7,3 +7,5 @@ print(f"Bis Dein Abschluss sind {zeitspanne.days} geblieben")
 
 #Benutzer hat Flug am 28.02.2026 um 12.18, gebe aus, wie viel Zeit ist ihm geblieben
 
+Du hast Dein Flug in: xxxx
+
