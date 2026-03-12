@@ -1,0 +1,23 @@
+1. Erstelle ein Fenster mit der Größe 800x600.
+
+2. Setze bg.jpg als Hintergrundbild.
+
+3. Erstelle ein graues Rechteck in der Mitte des Fensters.
+
+4. Zeige image.png in der Mitte des Fensters an.
+
+5. Füge ein Bild (image.png) ein, skalieren es passend
+
+6. Erstelle einen Button in der Mitte des Fensters.
+
+7. Erstelle ein Eingabefeld mit einem Bestätigungsknopf im Fenster.
+
+8. Füge Sound zum Fenster hinzu.
+
+9. Spiele den Sound für 3 Sekunden ab, wenn die Taste R gedrückt wird.
+
+10. Lasse image.png der Mausbewegung folgen.
+
+11. Zeige auf dem Bildschirm die aktuellen Mauskoordinaten an.
+
+12. Lass obj_1.png und obj_2.png zufällig von der Oberseite des Fensters nach unten fallen und verschwinden, sobald sie den Boden berühren.
