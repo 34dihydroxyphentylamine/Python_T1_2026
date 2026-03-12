@@ -1,0 +1,15 @@
+import random
+
+#variable
+rand_num = random.randint(1,20)
+
+print(rand_num)
+
+answer = int(input("Guess the number between 1 and 20:  "))
+
+if answer>rand_num:
+    print("Number is too big!")
+elif answer<rand_num:
+    print("Number is too small!")
+elif answer == rand_num:
+    print("Your guess is correct!")
