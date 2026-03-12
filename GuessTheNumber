@@ -1,0 +1,18 @@
+1. Zahlengenerator
+  Das Programm erzeugt eine zufällige Zahl, die der Benutzer erraten soll.
+
+2. Benutzereingabe
+  Das Programm fordert den Benutzer auf, eine Zahl einzugeben.
+
+3. Vergleich der Eingabe mit der generierten Zahl
+a) Wenn die Zahl korrekt ist → Ausgabe einer Erfolgsnachricht.
+b) Wenn die Zahl zu klein ist → Ausgabe der Nachricht: „Die Zahl ist zu klein.“
+c) Wenn die Zahl zu groß ist → Ausgabe der Nachricht: „Die Zahl ist zu groß.“
+
+4. Schleifenmechanismus
+  Die Eingabeaufforderung wiederholt sich so lange, bis der Benutzer die richtige Zahl erraten hat.
+
+5. Option für eine zweite Runde
+a) Das Programm fragt den Benutzer, ob er weiterspielen möchte.
+b) Wenn ja → eine neue Zahl wird generiert.
+c) Die Schleife startet erneut, sodass der Benutzer wieder raten kann.
