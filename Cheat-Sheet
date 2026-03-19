@@ -1,0 +1,75 @@
+# 1. Basis Setup
+import pygame
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+clock = pygame.time.Clock()
+running = True
+
+#2.Bild an bestimmter Position anzeigen
+img = pygame.image.load("image.png")
+
+screen.blit(img, (100, 200))
+
+#3.Bild mit Pfeiltasten bewegen
+x, y = 100, 100
+speed = 5
+
+keys = pygame.key.get_pressed()
+
+if keys[pygame.K_LEFT]:
+    x -= speed
+if keys[pygame.K_RIGHT]:
+    x += speed
+if keys[pygame.K_UP]:
+    y -= speed
+if keys[pygame.K_DOWN]:
+    y += speed
+
+screen.blit(img, (x, y))
+#4.Bild folgt der Maus
+mx, my = pygame.mouse.get_pos()
+screen.blit(img, (mx, my))
+
+#5.Button mit Text
+rect = pygame.Rect(300, 200, 200, 60)
+pygame.draw.rect(screen, (100,100,100), rect)
+
+font = pygame.font.SysFont(None, 40)
+text = font.render("Click", True, (255,255,255))
+screen.blit(text, (320, 215))
+#6.Button ändert Hintergrund + zeigt Bild
+clicked = False
+
+for event in pygame.event.get():
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if rect.collidepoint(event.pos):
+            clicked = True
+
+if clicked:
+    screen.fill((0, 0, 255))  # neuer BG
+    screen.blit(img, (400, 300))
+#7.Audio in Loop
+pygame.mixer.music.load("bg.mp3")
+pygame.mixer.music.play(-1)
+
+#8.Audio für bestimmte Zeit
+sound = pygame.mixer.Sound("sound.mp3")
+sound.play()
+
+pygame.time.delay(2000)  # 2 Sekunden
+sound.stop()
+
+#9.Fenster schließen
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+
+#10.Collision
+rect1 = pygame.Rect(100,100,50,50)
+rect2 = pygame.Rect(120,120,50,50)
+
+if rect1.colliderect(rect2):
+    print("Kollision!")
+
+11.
