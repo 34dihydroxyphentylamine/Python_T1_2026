@@ -1,0 +1,31 @@
+import pygame
+
+WINDOW_WIDTH = 1200
+WINDOW_HEIGHT = 600
+SPRITE_WIDTH = 70
+SPRITE_HEIGHT = 70
+
+
+pygame.init()
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT))
+pygame.display.set_caption("Geometry Dash")
+sprite_img = pygame.image.load("sprite.png")
+#groessen und position immer in Klammer
+sprite_img = pygame.transform.scale(sprite_img, (SPRITE_WIDTH,SPRITE_HEIGHT))
+spike_x =0
+running = True
+while running:
+    clock.tick(60)
+    #event Schleife
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            running = False
+    #rgb
+    screen.fill((255,255,255))
+    screen.blit(sprite_img,(spike_x,WINDOW_HEIGHT-SPRITE_HEIGHT))
+    spike_x += 1
+    pygame.display.flip()
+    
+pygame.quit()
+
