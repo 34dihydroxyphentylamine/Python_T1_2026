@@ -1,0 +1,43 @@
+1. Grafiken skalieren
+
+Deine Spielfigur (Player) und die Hindernisse (Spikes) sind bereits im Spiel integriert, haben aber momentan noch unpassende Größen.
+
+    Nutze die Funktion pygame.transform.scale(), um die Breite und Höhe der Bilder perfekt an Dein Spielfeld anzupassen.
+
+2. Zufällige Hindernisse erstellen
+
+Damit das Spiel abwechslungsreich bleibt, sollen verschiedene Spike-Bilder erscheinen:
+
+    Erstelle zuerst eine leere Liste namens spike_imgs = [].
+
+    Verwende eine for-Schleife und die Methode .append(), um alle Deine gesammelten Spike-Bilder in diese Liste zu laden.
+
+    Gehe nun in die __init__-Methode Deiner Klasse Spike. Anstatt ein festes Bild zuzuweisen, nutzt Du random.choice(spike_imgs), um bei jeder Erstellung eines Objekts ein zufälliges Bild auszuwählen.
+
+3. Management der Hindernisse (Die Liste)
+
+Die while-Schleife steuert jeden einzelnen Frame Deines Spiels. Damit immer genug Herausforderungen warten, bereitest Du die Spikes vor:
+
+    Erstelle zu Spielbeginn eine Liste namens spikes und fülle sie mit 20 Spike-Objekten an verschiedenen Positionen (viele davon außerhalb des sichtbaren rechten Rands).
+
+    Nutze in der Hauptschleife for-Schleifen, um für jeden Spike in der Liste die Methoden .draw() und .update() aufzurufen.
+
+    Überlegung: Wie musst Du die Position eines Spikes anpassen, sobald er den linken Bildschirmrand verlässt, damit er rechts wieder neu erscheint?
+
+4. Parallax-Hintergrund hinzufügen
+
+Ein schöner Hintergrund macht das Spiel lebendig. Du benötigst zwei Hintergrund-Objekte (bg1 und bg2):
+
+    Skaliere beide Bilder auf die volle Bildschirmgröße.
+
+    Positioniere sie direkt nebeneinander.
+
+    Verschiebe beide Bilder kontinuierlich nach links. Sobald ein Bild komplett aus dem Sichtfeld verschwindet, setzt Du es direkt hinter das andere Bild. So entsteht ein endloser, geschmeidiger Parallax-Effekt.
+
+5. Kollisionsabfrage
+
+Ein Spiel braucht Regeln! Du musst wissen, wann die Spielfigur ein Hindernis berührt:
+
+    Nutze die Methode .colliderect(), um zu prüfen, ob sich die Rechtecke (Rects) von Player und Spike überschneiden.
+
+    Überlege Dir eine passende Reaktion, wenn eine Kollision festgestellt wird (z. B. das Spiel neu starten).
