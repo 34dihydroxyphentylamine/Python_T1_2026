@@ -73,3 +73,15 @@ if rect1.colliderect(rect2):
     print("Kollision!")
 
 11.
+
+#12. Background 
+bg =pygame.image.load("background.png")
+
+#innerhalb von while Schleife 
+
+bg_x -= speed / 2 
+if bg_x <= -WIDTH: 
+  bg_x = 0
+
+screen.blit(bg, (bg_x,0)) 
+screen.blit(bg, (bg_x + WIDTH,0))
