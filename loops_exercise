@@ -1,0 +1,125 @@
+A1
+Raketenstart
+Schreibe eine Schleife, die von 5 rückwärts zählt und am Ende Start! ausgibt.
+Input: Startwert 5
+Output: 5, 4, 3, 2, 1, Start!
+Input: Startwert 3
+Output: 3, 2, 1, Start!
+
+A2
+Summe der Überstunden
+Du hast eine Liste mit Arbeitsstunden pro Tag. Berechne die Summe aller Stunden, die über 8 liegen.
+Input: [8, 10, 9]
+Output: 3
+Input: [7, 8, 12]
+Output: 4
+
+A3
+Der Passwort-Check
+Frage den User mit einer while-Schleife so lange nach einem Passwort, bis er "Geheim123" eingibt.
+Input: "mein Passwort"
+Output: Falsch
+Input: "Geheim123"
+Output: Erfolg
+
+A4
+Vokale zählen
+Zähle mithilfe einer Schleife, wie viele Vokale in einem Satz vorkommen.
+Input: "Python macht Spaß"
+Output: 3
+Input: "Abendessen"
+Output: 4
+
+A5
+Begrüßung
+Schreibe eine for-Schleife, die eine Liste von Namen durchgeht und für jeden Namen eine Begrüßung untereinander ausgibt. Vor dem Namen soll Hallo stehen und am Ende ein Ausrufezeichen.
+
+Beispiele
+Input: ["Max", "Nela"]
+Output:
+Hallo Max!
+Hallo Nela!
+
+A6
+Einkaufs-Tracker
+Du hast eine Einkaufsliste. Erstelle eine zweite, leere Liste namens einkaufswagen. Gehe mit einer Schleife jeden Punkt der ursprünglichen Einkaufsliste durch. Für jeden Artikel soll per Zufall entschieden werden, ob er den Zusatz (gekauft) oder (gab nicht) erhält. Füge das Ergebnis in den einkaufswagen ein und gib nach jedem einzelnen Schritt den aktuellen Inhalt des Einkaufswagens aus.
+
+    Beispiele
+    Input: ["Bananen", "Milch"]
+    Output:
+    ["Bananen (gekauft)"]
+    ["Bananen (gekauft)", "Milch (gab nicht)"]
+
+Input: ["Brot"]
+Output:
+["Brot (gekauft)"]
+
+A7
+Wecekr
+Schreibe zuerst ein Skript, das eine while-Schleife nutzt, um permanent Aufstehen! in Dein Terminal zu drucken. Die Schleife darf nur stoppen, wenn Du die Taste s auf Deiner Tastatur drückst. Da wir später ein Fenster öffnen, nutzen wir hier schon die Pygame-Event-Struktur.
+
+Im zweiten Schritt erstellst Du ein echtes Fenster. Solange der Wecker "aktiv" ist, soll das Wort Aufstehen! groß im Fenster stehen. Sobald s gedrückt wird, schließt sich das Fenster oder der Text verschwindet.
+2. Beispiele
+
+Input: Programm läuft, Benutzer drückt keine Taste.
+Output (Terminal): Aufstehen! (endlos untereinander)
+Input: Programm läuft, Benutzer drückt Taste s.
+Output (Terminal): Wecker ausgeschaltet. (Programm beendet)
+
+A8
+Party
+Du hast eine Liste von Objekten der Klasse Mensch. Jedes Objekt hat die Methoden get_name() und get_age(). Deine Aufgabe ist es, eine neue Liste zu erstellen, die nur die Personen enthält, die mindestens 15 und maximal 17 Jahre alt sind (also über 14 und jünger als 18). Nutze dafür eine for-Schleife, um die Objekte zu prüfen.
+
+gaeste_gaming = [
+Mensch("ZockerLeon", 19),
+Mensch("PixelPaula", 15),
+Mensch("ControllerChris", 14),
+Mensch("NoobNils", 16),
+Mensch("ProGamerPetra", 17),
+Mensch("LaggyLisa", 13),
+Mensch("RetroRalf", 15),
+Mensch("SpeedrunSam", 11)
+]
+
+gaeste_nachbarschaft = [
+Mensch("Herr Schmidt", 50),
+Mensch("Kleine Susi", 8),
+Mensch("Teenager Tim", 16),
+Mensch("Azubi Anna", 17),
+Mensch("Student Stefan", 21),
+Mensch("Schüler Simon", 15),
+Mensch("Baby Ben", 2),
+Mensch("Großer Gabriel", 16)
+]
+gaeste_sport = [
+Mensch("Lukas", 13),
+Mensch("Sarah", 15),
+Mensch("Tom", 17),
+Mensch("Emma", 14),
+Mensch("Finn", 16),
+Mensch("Mila", 12),
+Mensch("Jonas", 18),
+Mensch("Lea", 15)
+]
+
+Beispiele
+Input: Liste mit Objekten: Max (13), Lisa (16), Tim (17)
+Output: Liste mit Objekten: Lisa (16), Tim (17)
+Input: Liste mit Objekten: Jan (14), Sarah (15), Tom (18)
+Output: Liste mit Objekten: Sarah (15)
+
+A9
+Erstelle eine Klasse Influencer. Jedes Objekt dieser Klasse hat einen Namen und eine Follower-Anzahl (startet bei 0). Die Klasse benötigt Methoden, um die aktuelle Follower-Zahl auszugeben sowie Aktionen auszuführen.
+    Es gibt zwei Hauptaktionen:
+
+    Posten: Hierbei wird zufällig eine Plattform gewählt. Auf Instagram gibt es 9, auf TikTok 13 und auf X (ehemals Twitter) 2 neue Follower.
+
+    Live gehen: Dies bringt immer 20 neue Follower.
+
+Schreibe eine Schleife, in der ein Influencer-Objekt in jeder Runde zufällig entscheidet, ob er postet (und auf welcher Plattform) oder live geht. Die Schleife läuft so lange, bis die Grenze von 100 Followern erreicht oder überschritten ist. Am Ende soll die Nachricht You earned silver influencer badge erscheinen.
+
+    Beispiele
+    Input: Name "TechTim", startet bei 0 Followern.
+    Output: TechTim postet auf TikTok (+13). TechTim geht Live (+20)... You earned silver influencer badge.
+    Input: Name "ChefCharly", startet bei 0 Followern.
+    Output: ChefCharly postet auf X (+2). ChefCharly postet auf Instagram (+9)... You earned silver influencer badge.
