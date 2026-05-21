@@ -1,0 +1,50 @@
+
+## 1. Der unendliche Sprung in der Klasse Player
+
+### Beschreibung
+
+Standardmäßig kann eine Spielfigur in Plattformern nur springen, wenn sie den Boden oder eine Plattform berührt. Um das Gameplay dynamischer zu gestalten, soll der Spieler die Möglichkeit erhalten, unendlich oft in der Luft zu springen. Selbst wenn die Figur gerade tief fällt, soll ein Druck auf die Leertaste sie sofort wieder nach oben katapultieren.
+
+### Arbeitsauftrag
+
+* Die Methode jump(self) in der Klasse Player untersuchen.
+* Die if-Bedingung entfernen, die prüft, ob der Spieler auf dem Boden steht (self.is_on_ground).
+* Die vertikale Geschwindigkeit self.vel_y steuert die Bewegung. Ein positiver Wert bewegt die Figur nach unten (Fallen), ein negativer Wert nach oben (Springen). Die Variable self.vel_y fest auf einen starken negativen Wert (z. B. -22) setzen, damit die Figur sofort nach oben beschleunigt, egal in welchem Zustand sie sich befindet.
+* Nach dem Impuls die Variable self.is_on_ground auf False setzen, da sich der Spieler ab jetzt in der Luft befindet.
+
+---
+
+## 2. Kontinuierliche Menü-Musik in menu_pane
+
+### Beschreibung
+
+Um das Spiel akustisch abzurunden, soll im Hintergrund des Hauptmenüs eine fortlaufende Musik laufen. Solange das Menü sichtbar ist, muss die Datei menu_audio.mp3 in einer unendlichen Schleife abgespielt werden. Sobald der Spieler jedoch ein Level startet oder das Spiel vollständig beendet, muss diese Musik sofort stoppen, damit sie sich nicht mit der Musik des Hauptspiels überschneidet.
+
+### Arbeitsauftrag
+
+* **Beim Starten des Menüs:** Das Pygame-Sound-System nutzen. Zuerst prüfen, ob die Musikdatei existiert. Wenn ja, die Datei abspielen. Damit das Lied von vorne beginnt, wenn es vorbei ist, bei der Methode .play() den Parameter loops=-1 verwenden. Den gestarteten Kanal in einer Variablen (z. B. menu_channel) speichern.
+* **Beim Verlassen des Menüs:** Das Menü kann auf drei Wegen geschlossen werden:
+1. Das Schließen-Kreuz des Fensters wird geklickt (pygame.QUIT).
+2. Level 1 wird über die Taste oder den Button ausgewählt.
+3. Level 2 wird über die Taste oder den Button ausgewählt.
+
+
+* An all diesen drei Stellen im Code eine Abfrage einbauen, die den menu_channel per .stop() sofort stummschaltet, bevor das Menü verlassen wird.
+
+---
+
+## 3. Das Game-Over-Menü und Textplatzierung in pygame_username_input
+
+### Beschreibung
+
+Wenn der Spieler ein Hindernis berührt, wechselt das Spiel in den Game-Over-Bildschirm. Hier soll der Spieler seinen Namen für die Highscore-Liste eintragen können. Damit das Menü ordentlich und übersichtlich aussieht, müssen die verschiedenen Textelemente und die Eingabebox mathematisch sauber untereinander auf dem Bildschirm positioniert werden.
+
+### Arbeitsauftrag
+
+In Pygame liegt der Ursprung des Koordinatensystems (0,0) oben links. Die aktuelle Breite des Fensters ist in der Variablen w gespeichert, die Höhe in h. Die Texte über Brüche der Gesamthöhe und Gesamtbreite zentriert untereinander anordnen:
+
+* **Der „GAME OVER“-Schriftzug:** Diese Hauptüberschrift soll groß im oberen Bereich des Bildschirms stehen. Den Text in der horizontalen Mitte (w // 2) und im oberen Fünftel der Höhe (h // 5) platzieren.
+* **Die Punkteanzeige (Score):** Der erreichte Score soll direkt unter dem Game-Over-Text stehen. Eine etwas kleinere Schriftgröße wählen und die Y-Position weiter nach unten verschieben (auf h // 3.2).
+* **Die Eingabeaufforderung:** Der Hinweistext („Gib Deinen Namen ein...“) bildet die Beschriftung für das Eingabefeld. Diesen Text mittig über dem Eingabekasten bei der Position h // 2.2 platzieren.
+* **Das Eingabefeld (Eingabekasten):** Das Rechteck für die Namenseingabe mittig ausrichten. Die Position so berechnen, dass die Box genau im horizontalen Zentrum des Fensters liegt (w // 2 - box_w // 2) und vertikal leicht unter der Aufforderung platziert ist (h // 1.8 - box_h // 2).
+* **Der Speicher-Hinweis:** Ganz unten soll der Text „Drücke [ENTER] zum Speichern“ erscheinen. Diesen in den unteren Bereich des Bildschirms auf die Position h // 1.4 setzen.
