@@ -1,0 +1,88 @@
+import pygame
+
+WINDOW_WIDTH = 1200
+WINDOW_HEIGHT = 600
+SPRITE_WIDTH = 70
+SPRITE_HEIGHT = 70
+GROUND = WINDOW_HEIGHT
+GRAVITY = 0.9
+
+pygame.init()
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT))
+pygame.display.set_caption("Geometry Dash")
+sprite_img = pygame.image.load("sprite.png")
+
+#Klasse Sprite
+#import : Bibliotheken hinzufugen yzb pygame
+#class : definition von neue Klasse
+#__init__: atributen dfinieren
+#def neue Befehl/Methode/Funktion anlegen
+class Player:
+    def __init__(self):
+        self.width = SPRITE_WIDTH
+        self.height = SPRITE_HEIGHT
+        
+        self.x = 0
+        
+        self.y = WINDOW_HEIGHT - self.height
+        #velocity v (start)
+        self.vel_y = 0
+        self.rotation = 0
+        
+    def jump(self):
+        self.vel_y -= 50
+        
+    def update(self):
+        self.vel_y += GRAVITY
+               
+        self.y += self.vel_y
+        
+        #falls Player boden beruhrt
+        # window = 800
+        #y = 805
+        #wieder originalhöhe
+        if self.y > (WINDOW_HEIGHT - self.height):
+            self.y = WINDOW_HEIGHT - self.height
+            self.vel_y = 0
+            #Player soll nicht mehr rotioeren
+            self.rotation = 0
+            #Player ist im weiter im Luft
+        else:
+           self.rotation += 90
+    #Funktion draw()
+    def draw(self):
+        print(self.rotation)
+        rotated = pygame.transform.rotate(sprite_img,self.rotation)
+        rect = rotated.get_rect(center=(self.x+35,self.y+35))
+        screen.blit(sprite_img,rect.topleft)
+    def get_rect(self):
+        return pygame.Rect(self.x,self.y,SPRITE_WIDTH,SPRITE_HEIGHT)
+    def test(self):
+        print(self.x)
+           
+        
+        
+        
+#groessen und position immer in Klammer
+#sprite_img = pygame.transform.scale(sprite_img, (SPRITE_WIDTH,SPRITE_HEIGHT))
+#spike_x =0
+running = True
+while running:
+    clock.tick(60)
+    #event Schleife
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            running = False
+            
+    #rgb
+    screen.fill((255,255,255))
+    player = Player()
+    player.draw()
+    player.update()
+    screen.blit(sprite_img,(spike_x,WINDOW_HEIGHT-SPRITE_HEIGHT))
+    #spike_x += 1
+    pygame.display.flip()
+    
+pygame.quit()
+
